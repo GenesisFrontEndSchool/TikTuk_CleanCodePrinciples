@@ -2,18 +2,16 @@ import Comment from "./Comment/Comment"
 
 export const Comments = ({
     comments
-}) => comments.map((item) => {
+}) => comments.map(({id, name, email, time, formattedTime, content}) => {
         return(
                 <div>
                     <Comment 
-
-                    id={item.id}
-                    name={item.name}
-                    email={item.email}
-                    time={item.time}
-                    formattedTime={item.formattedTime}
-                    content={item.content}
-                    
+                    key={id}
+                    name={name}
+                    email={email}
+                    time={time}
+                    formattedTime={formattedTime}
+                    content={content}
                 />
         </div>
     )

@@ -16,15 +16,17 @@ export const FeedItem = (
     }
 ) => {
 
+    const cardStyle = {
+        padding: '24px 48px',
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '32px'
+    }
+
     return (
         <Card
             component={Paper}
-            sx={{
-                padding: '24px 48px',
-                display: 'flex',
-                flexDirection: 'column',
-                gap: '32px'
-            }}
+            sx={cardStyle}
         >
             <FeedItemHeading
                 avatarUrl={avatarUrl}

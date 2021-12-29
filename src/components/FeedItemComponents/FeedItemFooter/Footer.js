@@ -9,7 +9,7 @@ export default function FeedItemFooter (
         likes, comments
     }
 ) {
-    const [areCommentsDisplayed, displayComments] = useState(false);
+    const [areCommentsDisplayed, setAreCommentsDisplayed] = useState(false);
     const toggle = () => areCommentsDisplayed ? <Comments comments={comments}/> : null;
     
     return(
@@ -21,7 +21,7 @@ export default function FeedItemFooter (
             <Likes 
             likes={likes}
             />
-            <Button variant="text" onClick={() => displayComments(!areCommentsDisplayed)}>
+            <Button variant="text" onClick={() => setAreCommentsDisplayed(!areCommentsDisplayed)}>
                 { areCommentsDisplayed ? "Hide Comments" : "Show Comments"}
             </Button>
             {toggle()}

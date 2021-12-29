@@ -8,22 +8,28 @@ export default function Likes (
         likes
     }
 ) {
-    const setColor = () => !liked.isLiked ? "red" : "gray";
-
-    const [liked, like] = useState({
+    const [liked, setLiked] = useState({
         isLiked: false,
         color: "gray"
     });
 
+    const boxStyle = {
+        pl: 3,
+        display: "flex",
+        flexDirection: "row",
+        alignItems: "center",
+        gap: 0.5
+    }
+
+    const setLikeColor = () => !liked.isLiked ? "red" : "gray";
+    const onClickHandler = () => setLiked({
+        isLiked: !liked.isLiked, 
+        color: setLikeColor()
+    });
+
     return(
-        <Box sx={{
-            pl: 3,
-            display: "flex",
-            flexDirection: "row",
-            alignItems: "center",
-            gap: 0.5
-        }}>
-            <Button onClick={() => like({isLiked: !liked.isLiked, color: setColor()})}>
+        <Box sx={boxStyle}>
+            <Button onClick={onClickHandler()}>
                 <FavoriteOutlinedIcon sx={{color: liked.color}}/>
             </Button>
             <Typography>{liked.isLiked ? likes + 1 : likes}</Typography>
