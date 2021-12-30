@@ -3,16 +3,7 @@ import { Button, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import { useState } from "react";
 
-export default function Likes (
-    {
-        likes
-    }
-) {
-    const [liked, setLiked] = useState({
-        isLiked: false,
-        color: "gray"
-    });
-
+export default function Likes ({likes}) {
     const boxStyle = {
         pl: 3,
         display: "flex",
@@ -20,6 +11,11 @@ export default function Likes (
         alignItems: "center",
         gap: 0.5
     }
+
+    const [liked, setLiked] = useState({
+        isLiked: false,
+        color: "gray"
+    });
 
     const setLikeColor = () => !liked.isLiked ? "red" : "gray";
     const onClickHandler = () => setLiked({

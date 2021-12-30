@@ -34,7 +34,6 @@ export const FeedItem = (
             />
             <FeedItemVideo videoUrl={videoUrl} />
             <FeedItemDescription description={description} />
-            {/* <FeedItemHashtag hashtags={hashtags}/> */}
             <FeedItemFooter likes={likes} comments={comments} />
         </Card>
     )

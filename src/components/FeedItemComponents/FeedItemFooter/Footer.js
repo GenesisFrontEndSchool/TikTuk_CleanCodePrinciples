@@ -4,11 +4,7 @@ import { useState } from "react";
 import { Comments } from "./Comments";
 import Likes from "./Likes";
 
-export default function FeedItemFooter (
-    {
-        likes, comments
-    }
-) {
+export default function FeedItemFooter ({likes, comments}) {
     const [areCommentsDisplayed, setAreCommentsDisplayed] = useState(false);
     const toggle = () => areCommentsDisplayed ? <Comments comments={comments}/> : null;
     

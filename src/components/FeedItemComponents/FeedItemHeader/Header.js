@@ -2,13 +2,7 @@ import { Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import UserAvatar from "./Avatar";
 
-
-export default function FeedItemHeading (
-    {
-        userName,
-        avatarUrl
-    }
-) {
+export default function FeedItemHeading ({userName, avatarUrl}) {
     return(
         <Box sx={{
             display: "flex",
@@ -16,10 +10,8 @@ export default function FeedItemHeading (
             gap: "24px"
         }}>
             <UserAvatar 
-
-            userName={userName}
-            avatarUrl={avatarUrl}
-            
+                userName={userName}
+                avatarUrl={avatarUrl}
             />
             <Typography variant="h6">
                 {userName}
