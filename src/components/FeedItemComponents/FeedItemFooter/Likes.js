@@ -12,23 +12,27 @@ export default function Likes ({likes}) {
         gap: 0.5
     }
 
-    const [liked, setLiked] = useState({
+    const [liked, setLike] = useState({
         isLiked: false,
         color: "gray"
     });
 
-    const setLikeColor = () => !liked.isLiked ? "red" : "gray";
-    const onClickHandler = () => setLiked({
+    const handleClick = () => {
+        setLike({
         isLiked: !liked.isLiked, 
         color: setLikeColor()
-    });
+        });
+    }   
+
+    const setLikeColor = () => !liked.isLiked ? "red" : "gray";
+    const showLikes = () => liked.isLiked ? likes + 1 : likes
 
     return(
         <Box sx={boxStyle}>
-            <Button onClick={onClickHandler()}>
+            <Button onClick={handleClick}>
                 <FavoriteOutlinedIcon sx={{color: liked.color}}/>
             </Button>
-            <Typography>{liked.isLiked ? likes + 1 : likes}</Typography>
+            <Typography>{showLikes()}</Typography>
         </ Box>
     )
 }

@@ -5,6 +5,7 @@ import React, {
 } from "react";
 import { FeedItem } from "../components/FeedItem/FeedItem";
 import commentsList from "../mockData/commentsData.js";
+import trendingFeedMockData from "../mockData/trendingFeedData"
 import axios from 'axios';
 
 const OPTIONS = {
@@ -35,14 +36,18 @@ export const TrendingFeed = () => {
       );
   }
 
-  useEffect(() => getPostData(), [])
+  const getMockPostData = () => {
+    setIsLoaded(true);
+    setItems(trendingFeedMockData)
+  }
+
+  useEffect(() => getMockPostData(), [])
 
   return (
     <>
       { error && error }
       { !isLoaded && "Loading ..." }
-      { isLoaded &&     
-        items.map((props, index) => {
+      { isLoaded && items.map((props, index) => {
           return (
             <Box sx={{
               maxWidth: '800px',
@@ -53,11 +58,11 @@ export const TrendingFeed = () => {
             }}>
               <FeedItem
                 key={index}
-                avatarUrl={props.authorMeta.avatar}
-                userName={props.authorMeta.name}
-                videoUrl={props.videoUrl}
-                description={props.text}
-                likes={props.authorMeta.heart}
+                avatarUrl={props.author.avatarThumb}
+                userName={props.author.nickname}
+                videoUrl={props.video.playAddr}
+                description={props.desc}
+                likes={props.authorStats.heart}
                 comments={commentsList}
               />
             </Box>
