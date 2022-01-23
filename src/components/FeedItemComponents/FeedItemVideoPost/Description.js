@@ -11,7 +11,7 @@ export default function FeedItemDescription (
             pl: 3,
             pr: 3
         }}>
-            <Typography variant="body1">
+            <Typography data-testid="description" variant="body1">
                 {description}
             </Typography>
         </ Box>

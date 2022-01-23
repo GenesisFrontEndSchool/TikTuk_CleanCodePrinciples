@@ -37,8 +37,13 @@ export const TrendingFeed = () => {
   }
 
   const getMockPostData = () => {
-    setIsLoaded(true);
-    setItems(trendingFeedMockData)
+    return new Promise(() => {
+      setTimeout(() => {
+        setIsLoaded(true);
+        setItems(trendingFeedMockData)
+        }, 2000)
+      }
+    )
   }
 
   useEffect(() => getMockPostData(), [])

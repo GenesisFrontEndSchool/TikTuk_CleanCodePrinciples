@@ -1,12 +1,12 @@
 import { Header } from './components/Header/Header';
 import './App.css';
-import GetTrendingFeed from './service/TrendingFeed';
+import TrendingFeed from './service/TrendingFeed';
 
 function App() {
   return (
     <>
       <Header />
-      <GetTrendingFeed />
+      <TrendingFeed />
     </>
   );
 } 

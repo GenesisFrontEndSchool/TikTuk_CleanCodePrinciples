@@ -4,7 +4,7 @@ export const Comments = ({
     comments
 }) => comments.map(({id, name, email, time, formattedTime, content}) => {
         return(
-                <div>
+                <div data-testid="comments">
                     <Comment 
                     key={id}
                     name={name}

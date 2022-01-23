@@ -29,10 +29,10 @@ export default function Likes ({likes}) {
 
     return(
         <Box sx={boxStyle}>
-            <Button onClick={handleClick}>
-                <FavoriteOutlinedIcon sx={{color: liked.color}}/>
+            <Button data-testid="like-btn" onClick={handleClick}>
+                <FavoriteOutlinedIcon data-testid="like" sx={{color: liked.color}}/>
             </Button>
-            <Typography>{showLikes()}</Typography>
+            <Typography data-testid="like-count">{showLikes()}</Typography>
         </ Box>
     )
 }

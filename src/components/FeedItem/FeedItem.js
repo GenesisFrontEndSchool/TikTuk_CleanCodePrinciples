@@ -25,6 +25,7 @@ export const FeedItem = (
 
     return (
         <Card
+            data-testid="feed-item-card"
             component={Paper}
             sx={cardStyle}
         >
